@@ -15,6 +15,11 @@ public class ShopService {
     private OrderRepo orderRepo;
     private IdService idService;
 
+    public ShopService(ProductRepo productRepo, OrderRepo orderRepo, IdService idService) {
+        this.productRepo = productRepo;
+        this.orderRepo = orderRepo;
+        this.idService = idService;
+    }
 
     public Order addOrder(List<String> productIds) {
         List<Product> products = new ArrayList<>();
