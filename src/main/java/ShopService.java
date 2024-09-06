@@ -11,9 +11,9 @@ import java.util.UUID;
 
 public class ShopService {
 
-    private ProductRepo productRepo;
-    private OrderRepo orderRepo;
-    private IdService idService;
+    private ProductRepo productRepo = new ProductRepo();
+    private OrderRepo orderRepo = new OrderMapRepo();
+    private IdService idService = new IdService();
 
     public ShopService(ProductRepo productRepo, OrderRepo orderRepo, IdService idService) {
         this.productRepo = productRepo;
