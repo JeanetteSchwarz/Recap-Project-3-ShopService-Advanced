@@ -8,10 +8,10 @@ public class Main {
         IdService idService = new IdService();
         OrderListRepo orderListRepo = new OrderListRepo();
 
-        productRepo.addProduct(new Product("1", "Birne"));
-        productRepo.addProduct(new Product("2", "Banane"));
-        productRepo.addProduct(new Product("3", "Kiwi"));
-        productRepo.addProduct(new Product("4", "Nektarine"));
+        productRepo.addProduct(new Product("2", "Birne"));
+        productRepo.addProduct(new Product("3", "Banane"));
+        productRepo.addProduct(new Product("4", "Kiwi"));
+        productRepo.addProduct(new Product("5", "Nektarine"));
 
         ShopService myShop = new ShopService(productRepo, orderRepo, idService);
 
@@ -21,7 +21,8 @@ public class Main {
 
         //System.out.println("ProductRepo: " + productRepo);
         //System.out.println("All Orders: " + orderRepo);
-        System.out.println(productRepo);
+        System.out.println(productRepo.getProducts());
+        System.out.println(orderRepo.getOrders());
 
 
 

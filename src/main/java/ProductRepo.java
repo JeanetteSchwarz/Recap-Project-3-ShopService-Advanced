@@ -1,8 +1,11 @@
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class ProductRepo {
+   @Getter
     private List<Product> products;
 
     public ProductRepo() {
