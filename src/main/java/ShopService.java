@@ -41,11 +41,14 @@ public class ShopService {
                 .toList();
         }
 
-        public void updateOrder(String orderId, OrderStatus orderStatus) {
-            Order toUpdate = Optional.ofNullable(orderRepo.getOrderById(orderId)).orElseThrow(() -> new OrderNotFoundException(orderId));
-            orderRepo.removeOrder(orderId);
-            orderRepo.addOrder(toUpdate.withOrderStatus(orderStatus));
+        public Order updateOrder(String orderId, OrderStatus newStatus){
+            if (orderRepo.getOrderById(orderId) == null){
+                throw new OrderNotFoundException(orderId);
+            }
+            return orderRepo.getOrderById(orderId).withOrderStatus(newStatus);
         }
+
+
 
 
 

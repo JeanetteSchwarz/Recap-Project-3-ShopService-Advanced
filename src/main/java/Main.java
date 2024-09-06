@@ -15,14 +15,16 @@ public class Main {
 
         ShopService myShop = new ShopService(myproductRepo, orderRepo, idService);
 
-        myShop.addOrder(List.of("1"));
+        Order orderOne = myShop.addOrder(List.of("1"));
         myShop.addOrder(List.of("1", "2", "3"));
         myShop.addOrder(List.of("2", "4"));
 
         //System.out.println("ProductRepo: " + productRepo);
         //System.out.println("All Orders: " + orderRepo);
-        System.out.println(myproductRepo.getProducts());
-        System.out.println(orderRepo.getOrders());
+        //System.out.println(myproductRepo.getProducts());
+        //System.out.println(orderRepo.getOrders());
+
+
 
 
 
